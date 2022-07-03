@@ -2,20 +2,43 @@
   "name": "feedback-app",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
+    "@chakra-ui/react": "^2.2.1",
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mantine/core": "^4.2.11",
+    "@mantine/dates": "^4.2.11",
+    "@mantine/dropzone": "^4.2.11",
+    "@mantine/form": "^4.2.11",
+    "@mantine/hooks": "^4.2.11",
+    "@mantine/modals": "^4.2.11",
+    "@mantine/next": "^4.2.11",
+    "@mantine/notifications": "^4.2.11",
+    "@mantine/prism": "^4.2.11",
+    "@mantine/rte": "^4.2.11",
+    "@mantine/spotlight": "^4.2.11",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "dayjs": "^1.11.3",
+    "framer-motion": "^6.3.16",
+    "json-server": "^0.17.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "shebang-regex": "^3.0.0",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "json-server --watch src/data/db.json --port 5000",
+    "dev": "concurrently \"npm run server\" \"npm start\""
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettier": "2.7.1",
+    "react-icons": "^4.4.0"
   }
 }
