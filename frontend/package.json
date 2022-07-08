@@ -2,7 +2,7 @@
   "name": "feedback-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:5000",
+  "proxy": "http://127.0.0.1:8000",
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
     "@emotion/react": "^11.9.3",
@@ -30,15 +30,19 @@
     "react-scripts": "5.0.1",
     "shebang-regex": "^3.0.0",
     "uuid": "^8.3.2",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@react-buddy/ide-toolbox": "^2.2.0",
+    "@react-buddy/palette-chakra-ui": "^2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server --watch src/data/db.json --port 5000",
-    "dev": "concurrently \"npm run server\" \"npm start\""
+    "server": "sh ../backend/startup.sh",
+    "mock_server": "json-server -H 0.0.0.0 --watch src/data/db.json --port 8000",
+    "mock": "concurrently \"npm run mock_server\" \"npm run start\"",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "eslintConfig": {
     "extends": [
