@@ -39,9 +39,15 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## `npm run server`
+## `npm run mock_server`
 
-Starts up [JSON Server](https://github.com/typicode/json-server) with dummy data from `src/data/db.json` and mocks the REST APIS for the React application.  The API server runs under http://localhost:5000/feedback.
+Starts up [JSON Server](https://github.com/typicode/json-server) with dummy data from `src/data/db.json` and mocks the REST APIS for the React application.  The API server runs under http://localhost:8000/feedback.
+
+## `npm run mock`
+Utilizes [concurrently](https://github.com/open-cli-tools/concurrently) to run both `npm run mock_server` and `npm run start` simultaneously.
+
+## `npm run server`
+Runs the FastAPI backend for the /feedback apis utilizing SQLite in-memory database.  The API server runs under http://localhost:8000/feedback.
 
 ## `npm run dev`
 Utilizes [concurrently](https://github.com/open-cli-tools/concurrently) to run both `npm run server` and `npm run start` simultaneously.
